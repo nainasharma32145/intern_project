@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Table</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css files/stylessss.css">
+</head>
+<body class="letschange">
+<div class="container-fluid" >
+
+<form class="formstyle" method="POST" name="sample">
+<br>
+    Index: <input type="number" name="index"> 
+    <br><br>
+    Course Outcome : <input type="text" name="name">
+    <br><br>
+    Direct Assesment Tools: <input type="text" name="name1">
+    <br><br>
+    Indirect Assesment Tools: <input type="text" name="name2">
+    <br><br>
+    <input class="buttonstyle" type="button" name="add" value="Add Data" onclick="addStudent();" class="btn btn-success"><hr>
+
+            <table id="tbl" class="table" border="1">
+                <thead>
+                <th>Index</th> 
+                <th>Course Outcome</th>
+                <th> Direct Assessment Tools</th>
+                <th>Indirect Assessment Tools</th>
+               
+                </thead>
+                
+                 <tbody>
+                     
+                 </tbody>
+             </table>
+
+</form>
+
+ <script type="text/javascript">
+       
+    function addStudent()
+    { 
+        var index=document.sample.index.value; 
+        var courseoutcome=document.sample.name.value; 
+        var DirectAssessmentTools=document.sample.name1.value;
+        var IndirectAssessmentTools=document.sample.name2.value;
+        
+        var tr = document.createElement('tr');
+        
+        var td1 = tr.appendChild(document.createElement('td'));
+        var td2 = tr.appendChild(document.createElement('td'));
+        var td3 = tr.appendChild(document.createElement('td'));
+        var td4 = tr.appendChild(document.createElement('td'));
+        var td5 = tr.appendChild(document.createElement('td'));
+        var td6 = tr.appendChild(document.createElement('td'));
+        
+        td1.innerHTML=index;
+        td2.innerHTML=courseoutcome;
+        td3.innerHTML=DirectAssessmentTools;
+        td4.innerHTml=IndirectAssessmentTools;
+        td5.innerHTML='<input type="button" name="del" value="Delete" onclick="delStudent(this);" class="btn btn-danger">'
+        td6.innerHTML='<input type="button" name="up" value="Update" onclick="UpStud(this);" class="btn btn-primary">'
+
+        document.getElementById("tbl").appendChild(tr);
+    }
+
+    function UpStud(stud){
+         var rollno=document.sample.rollno.value; 
+        var name=document.sample.name.value; 
+        var s = stud.parentNode.parentNode;
+        var tr = document.createElement('tr');
+        
+        var td1 = tr.appendChild(document.createElement('td'));
+        var td2 = tr.appendChild(document.createElement('td'));
+        var td3 = tr.appendChild(document.createElement('td'));
+        var td4 = tr.appendChild(document.createElement('td'));
+        
+        
+        td1.innerHTML='<input type="number" name="rollno1">';
+        td2.innerHTML='<input type="text" name="name1">';
+        td3.innerHTML='<input type="button" name="del" value="Delete" onclick="delStudent(this);" class="btn btn-danger">'
+        td4.innerHTML='<input type="button" name="up" value="Update" onclick="addUpStud(this);" class="btn btn-primary">'
+
+        document.getElementById("tbl").replaceChild(tr, s);
+    }
+
+    function addUpStud(stud){
+        var rollno=document.sample.rollno1.value; 
+        var name=document.sample.name1.value; 
+        var s = stud.parentNode.parentNode;
+        var tr = document.createElement('tr');
+        
+        var td1 = tr.appendChild(document.createElement('td'));
+        var td2 = tr.appendChild(document.createElement('td'));
+        var td3 = tr.appendChild(document.createElement('td'));
+        var td4 = tr.appendChild(document.createElement('td'));
+        
+        
+        td1.innerHTML=rollno;
+        td2.innerHTML=name;
+        td3.innerHTML='<input type="button" name="del" value="Delete" onclick="delStudent(this);" class="btn btn-danger">'
+        td4.innerHTML='<input type="button" name="up" value="Update" onclick="UpStud(this);" class="btn btn-primary">'
+
+        document.getElementById("tbl").replaceChild(tr, s);
+    }
+
+    function delStudent(Stud){
+        var s=Stud.parentNode.parentNode;
+        s.parentNode.removeChild(s);
+    }
+    
+    
+    </script>
+</div>
+    </body>
+</html>
+
