@@ -1,0 +1,37 @@
+.colorchanging{
+    background-color:#54BAB9;
+}
+
+.container-fluid{
+    padding:3% 10%;
+}
+.navbar{
+    padding:0 0 4.5rem;
+}
+
+.navbar-brand{
+    font-family:Montserrat ;
+    font-size:2rem;
+    font-weigth:bold;
+}
+
+.nav-link{
+    font-family: Montserrat;
+    color: aliceblue;
+}
+
+.linktag{
+     color: aliceblue;
+}
+
+
+.letschange{
+     background-color:#AEDBCE;
+}
+
+.buttonstyle{
+    padding: 10px 24px;
+    border-radius:4px ;
+    background-color: #54BAB9;
+    color: aliceblue;
+}
