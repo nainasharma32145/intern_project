@@ -1,0 +1,16 @@
+<% for(var i = 0; i < users.length; i++) { %>
+    <tr>
+        <td contenteditable='true'><%= users[i].index %></td>
+        <td contenteditable='true'><%= users[i].course_outcome %></td>
+        <td contenteditable='true'><%= users[i].direct %></td>
+        <td contenteditable='true'><%= users[i].indirect %></td>
+        <td>
+            <a class="btn border-shadow update">
+                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+            </a>
+            <a class="btn border-shadow delete" >
+                <span class="text-gradient"><i class="fas fa-trash"></i></span>
+            </a>
+        </td>
+    </tr>
+<% } %>
