@@ -129,3 +129,7 @@ plugins {
 	implementation 'com.github.javaparser:javaparser-core:2.0.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+task findAnnotatedClassesAndMethods(type: JavaExec) {
+	main = 'com.example.demo.AnnotationFinder'
+	classpath = sourceSets.main.runtimeClasspath
+}
