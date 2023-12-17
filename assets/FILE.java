@@ -116,3 +116,16 @@ public class AnnotationFinder {
         }
     }
 }
+
+
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.0'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+    dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'com.github.javaparser:javaparser-core:2.0.0'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
